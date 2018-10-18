@@ -158,3 +158,237 @@ function gradingStudents(grades) {
     }
     return grades;
 }
+
+
+//Apples and Oranges
+//https://www.hackerrank.com/challenges/apple-and-orange/problem
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+
+    var appleHouse = 0;
+    var orangeHouse = 0;
+
+    var apple = String(apples);
+    var orange = String(oranges);
+
+    apple = apple.split(',').map(Number);
+    orange = orange.split(',').map(Number);
+
+    for (var i=0; i<apple.length; i++) {
+        if (apple[i] + a >= s && apple[i] + a <= t ) {
+            appleHouse++;
+        }
+    }
+
+    for (var i=0; i<orange.length; i++) {
+        if (orange[i] + b >= s && orange[i] + b <= t ) {
+            orangeHouse++;
+        }
+    }
+
+    console.log(appleHouse + '\n' + orangeHouse);
+
+}
+
+
+//Kangaroo
+//https://www.hackerrank.com/challenges/kangaroo/problem
+//(x1+y*v1)=(x2+y*v2) -> where y is number of jumps, must be true to return YES
+function kangaroo(x1, v1, x2, v2) {
+    if ( x1 < x2 && v1 < v2 )  {
+        return 'NO';
+    } else if ( (x1-x2) % (v2-v1) == 0 ) {
+        return 'YES';
+    } else {
+        return 'NO';
+    }
+}
+
+//Between Two Sets
+//https://www.hackerrank.com/challenges/between-two-sets/problem
+function getTotalX(a, b) {
+    let validCount = 0;
+
+    for (let x = 1; x <= 100; x++) {
+        if (a.every(int => (x % int == 0))) {
+            if (b.every(int => (int % x == 0))) {
+                validCount++;
+            }
+        }
+    }
+
+    return validCount;
+}
+
+//Breaking the Records
+//https://www.hackerrank.com/challenges/breaking-best-and-worst-records/problem
+function breakingRecords(scores) {
+    let max = scores[0];
+    let min = scores[0];
+    let brokeMin = 0;
+    let brokeMax = 0;
+    for (let i = 0 ; i <= scores.length ; i++) {
+        if (scores[i+1] > max) {
+            max = scores[i+1];
+            brokeMax++;
+        }
+        if (scores[i+1] < min) {
+            min = scores[i+1];
+            brokeMin++;
+        }
+    }
+    let result = [brokeMax,brokeMin];
+    return result;
+}
+
+//Birthday Chocolate
+//https://www.hackerrank.com/challenges/the-birthday-bar/problem
+function birthday(s, d, m) {
+    let combinations = 0;
+    for (let i=0; i<s.length; i++) {
+      let total = 0;
+      for (let j=i; j<i+m; j++) {
+        total += s[j]
+      }
+      if (total == d) {
+      combinations++
+      }
+    }
+    return combinations;
+}
+
+//Divisible Sum Pairs
+//https://www.hackerrank.com/challenges/divisible-sum-pairs/problem
+function divisibleSumPairs(n, k, ar) {
+    let total = 0;
+    for (let i = 0; i < n ; i++) {
+        for (let j = 1; j < n ; j++) {
+            if ((ar[i] + ar[i+j]) % k == 0) {
+                total++;
+            }
+        }
+    }
+    return total;
+}
+
+//Migratory Birds
+//https://www.hackerrank.com/challenges/migratory-birds/problem
+function migratoryBirds(arr) {
+arr = arr.sort();
+let count = 0;
+let mf = 1;
+let ans;
+for(let i=0; i < arr.length; i++) {
+  count = (arr[i] == arr[i+1]) ? count + 1 : 0;
+  if (count > mf) {
+      mf = count;
+      ans = arr[i];
+  }
+}
+    return ans;
+}
+
+//Day of the Programmer
+//https://www.hackerrank.com/challenges/day-of-the-programmer/problem
+function dayOfProgrammer(year) {
+  if (year==1918) {
+    return '26.09.1918';
+  } else if ( (year <= 1917) && (year%4 == 0) || (year > 1918) && (year%400 == 0) || (year%4 == 0) && (year%100 !=0)) {
+    return '12.09.' + year.toString();
+  } else {
+    return '13.09.' + year.toString();
+  }
+}
+
+//Bon Appetit
+//https://www.hackerrank.com/challenges/bon-appetit/problem
+function bonAppetit(bill, k, b) {
+var sum = bill.reduce((a, b) => a + b, 0);
+var sumwo = sum - bill[k];
+  if (sumwo/2 == b) {
+      console.log('Bon Appetit');
+  } else {
+      console.log(b - sumwo/2);
+  }
+}
+
+//Sock Merchant
+//https://www.hackerrank.com/challenges/sock-merchant/problem
+function sockMerchant(n, ar) {
+  ar = ar.sort();
+  let count = 0;
+  let x = 0;
+  for (let i = 0; i < ar.length ; i++) {
+    if (ar[i+x] == ar[i+x+1]) {
+      count++;
+      x++;
+    }
+  }
+      return count/2;
+}
+
+//Drawing Book
+//https://www.hackerrank.com/challenges/drawing-book/problem
+function pageCount(n, p) {
+   let turns = 0;
+   if (p > (n/2)) {
+     turns = Math.ceil((n - p - (n % 2)) / 2)
+   } else {
+     turns = Math.ceil((p - 1) / 2)
+   }
+   return turns;
+}
+
+//Counting Valleys
+//https://www.hackerrank.com/challenges/counting-valleys/problem
+function countingValleys(n, s) {
+  let loc = 0;
+  let valleys = 0;
+  let locarr = [0];
+  s = s.split('');
+  for (let i = 0; i < s.length; i++) {
+      if (s[i] == 'U') {
+          loc+=1;
+      } else {
+          loc-=1;
+      }
+      locarr.push(loc);
+  }
+  for (let j = 0; j < locarr.length; j++) {
+    if (locarr[j] == 0 && locarr[j+1] == -1) {
+      valleys++;
+    }
+  }
+  return valleys;
+}
+
+//Electronics Shop
+//https://www.hackerrank.com/challenges/electronics-shop/problem
+function getMoneySpent(keyboards, drives, b) {
+  let inBudget = [];
+  let total;
+  let largest = -1;
+  for (let i = 0; i < keyboards.length; i++) {
+    for (let j = 0; j < drives.length; j++) {
+      total = keyboards[i] + drives[j];
+      if (total <= b) {
+        inBudget.push(total);
+        largest = Math.max.apply(Math, inBudget);
+      }
+    }
+  }
+  return largest;
+}
+
+OR
+
+function getMoneySpent(keyboards, drives, b) {
+  let max = -1;
+  keyboards.forEach((keyboard) => {
+    drives.forEach((drive) => {
+      if (keyboard + drive <= b && keyboard + drive > max) {
+        max = keyboard + drive;
+      }
+    })
+  });
+  return max;
+}
