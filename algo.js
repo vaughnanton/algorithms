@@ -392,3 +392,26 @@ function getMoneySpent(keyboards, drives, b) {
   });
   return max;
 }
+
+//Cat and Mouse
+//https://www.hackerrank.com/challenges/cats-and-a-mouse/problem
+function catAndMouse(x, y, z) {
+  let fromA = z-x;
+  let fromB = z-y;
+  if (fromB < 0) {
+      fromB = fromB * -1;
+  }
+  if (fromA < 0) {
+      fromA = fromA * -1;
+  }
+  if (fromA == fromB) {
+      return 'Mouse C';
+  } else if (fromA > fromB) {
+      return 'Cat B';
+  } else {
+      return 'Cat A';
+  }
+}
+
+//Forming a Magic Square
+//https://www.hackerrank.com/challenges/magic-square-forming/problem
