@@ -413,5 +413,48 @@ function catAndMouse(x, y, z) {
   }
 }
 
-//Forming a Magic Square
-//https://www.hackerrank.com/challenges/magic-square-forming/problem
+//Picking Numbers
+//https://www.hackerrank.com/challenges/picking-numbers/problem
+function pickingNumbers(a) {
+    let subsets = [];
+    let max = 0;
+
+    for (let i=0 ; i < subsets.length ; i++) {
+        if (subsets[i].length > max) {
+            max = subsets[i.length];
+        }
+    }
+
+    return max;
+
+}
+
+//Jumping on the Clouds
+//https://www.hackerrank.com/challenges/jumping-on-the-clouds/problem
+function jumpingOnClouds(c) {
+  let jumps = 0;
+  for(let i = 0; i < c.length; i++) {
+    if (c[i+2] === 0) {
+      jumps++;
+      i++;
+    }
+    else if (c[i+1] === 0) {
+      jumps++;
+    }
+  }
+  return jumps;
+}
+
+//Repeated String
+//https://www.hackerrank.com/challenges/repeated-string/problem
+function repeatedString(s, n) {
+  let x = Math.floor(n/s.length);
+  let full = s.repeat(x).split('');
+  let num = 0;
+  for (let j = 0; j<n; j++) {
+    if (full[j] == 'a') {
+      num++;
+    }
+  }
+  return num;
+}
