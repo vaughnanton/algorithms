@@ -458,3 +458,12 @@ function repeatedString(s, n) {
   }
   return num;
 }
+
+//Fibonacci Sequence
+function fib(n) {
+    var fibArray = [0,1]
+    for (var i = 0; i <= n; i++) {
+        fibArray.push(fibArray[i]+fibArray[i+1])
+    }
+    return fibArray.slice(0,n)
+}
