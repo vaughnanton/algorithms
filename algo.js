@@ -10,6 +10,14 @@ function simpleArraySum(n, ar) {
     return sum;
 }
 
+// ES6
+
+function simpleArraySum(array) {
+    let sum = 0;
+    array.forEach(x =>(sum += x));
+    return sum;
+}
+
 //Compare the Triplets
 //if a[i] > b[i] alice gets a point
 //if a[i] < b[i] bob gets a point

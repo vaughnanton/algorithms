@@ -149,5 +149,3 @@ const reducedNumbers = numbers.reduce( (accumulator, currentNumber) => accumulat
 var numbers = [3, 56, 2, 48, 5];
 const filteredNumbers = number.filter( num => num > 10 );
 // filteredNumbers = [56, 48];
-
-// ----------------------------------------------------------------------------
