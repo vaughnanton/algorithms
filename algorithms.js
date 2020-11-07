@@ -148,4 +148,20 @@ const reducedNumbers = numbers.reduce( (accumulator, currentNumber) => accumulat
 
 var numbers = [3, 56, 2, 48, 5];
 const filteredNumbers = number.filter( num => num > 10 );
-// filteredNumbers = [56, 48]; 
+// filteredNumbers = [56, 48];
+
+// ----------------------------------------------------------------------------
+
+// Verify a prime number - divisible only by itself and 1
+
+function isPrime(n){
+  var divisor = 2;
+  while (n > divisor){
+    if(n % divisor == 0) {
+      return false;
+    } else {
+      divisor++;
+    }
+  }
+  return true;
+}
