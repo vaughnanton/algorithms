@@ -186,3 +186,26 @@ function greatestCommonDivisor(a, b) {
   }
   return greatestDivisor;
 }
+
+// ----------------------------------------------------------------------------
+
+// Remove duplicate members from an array
+
+function removeDuplicate(arr) {
+  // associative array to hold whether array item exists
+  let exists = {},
+  // output array
+      outArr = [],
+      element;
+
+  for(let i = 0; i < arr.length; i++) {
+    element = arr[i];
+    // if the element isn't present in exists object, push to the output array
+    if(!exists[element]) {
+      outArr.push(element);
+      exists[element] = true;
+    }
+  }
+
+  return outArr;
+}
