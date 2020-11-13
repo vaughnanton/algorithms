@@ -10,6 +10,18 @@ function reverseString(input) {
 
 // ----------------------------------------------------------------------------
 
+// Reverse a string without internal functions
+
+function reverese(str) {
+  var rtnStr = '';
+  for (let i = str.length-1; i >= 0; i--) {
+    rtnStr += str[i];
+  }
+  retrun rtnStr;
+}
+
+// ----------------------------------------------------------------------------
+
 // Given a string, return true if the string is a palindrome or false if it is not.
 // ex. palindrome("madam") => true
 // ex. palindrome("abcdef") => false
