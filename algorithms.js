@@ -221,3 +221,20 @@ function removeDuplicate(arr) {
 
   return outArr;
 }
+
+// ----------------------------------------------------------------------------
+
+// Given a sorted array of n distinct integers where each integer is in the range from 0 to m-1 and m > n.
+// Find the smallest number that is missing from the array.
+
+function findSmallestMissingNumber(arr) {
+  if (arr[0] != 0) {
+    return 0;
+  } else {
+    for (let i=0; i<arr.length; i++) {
+      if (arr[i+1] - arr[i] > 1) {
+        return arr[i] + 1;
+      }
+    }
+  }
+}
