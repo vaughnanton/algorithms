@@ -238,3 +238,22 @@ function findSmallestMissingNumber(arr) {
     return "no missing numbers"
   }
 }
+
+// ----------------------------------------------------------------------------
+
+// Write a funciton that takes two arguments, a string and an array of strings representing
+// elements from the periodic table. The output should be a string that encapsulates any
+// matches from the array in square brackets, example..
+// "Harry Potter", ["Br", "H", "Po"] => "[H]arry [Po]tter"
+// "Ford Prefect", ["F", "O"] => "[F][O]rd Pre[F]ect"
+
+function formatBreakingBad(targetString, elementsArray) {
+  let newString = "";
+  elementsArray.forEach(function(x) {
+    if (targetString.includes(x) {
+
+    })
+    // newString = split and add brackets to target string
+  })
+  return targetString;
+}
