@@ -248,12 +248,12 @@ function findSmallestMissingNumber(arr) {
 // "Ford Prefect", ["F", "O"] => "[F][O]rd Pre[F]ect"
 
 function formatBreakingBad(targetString, elementsArray) {
-  let newString = "";
-  elementsArray.forEach(function(x) {
-    if (targetString.includes(x) {
-
-    })
-    // newString = split and add brackets to target string
+  elementsArray.forEach(function(element) {
+    if (targetString.includes(element)) {
+      targetString = targetString.replace(element, "[" + element + "]");
+    }
   })
   return targetString;
-}
+};
+
+console.log(formatBreakingBad("Harry Potter", ["H", "Po"]));
